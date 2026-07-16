@@ -41,6 +41,7 @@ KernelExecution::KernelExecution(const KernelExecution &other)
     : name(other.name), code(other.code), jit(other.jit),
       resourceCounts(other.resourceCounts), output_names(other.output_names),
       mapping_reorder_idx(other.mapping_reorder_idx),
+      hasConditionalsOnMeasureResults(other.hasConditionalsOnMeasureResults),
       user_data(other.user_data) {}
 
 KernelExecution &KernelExecution::operator=(const KernelExecution &other) {

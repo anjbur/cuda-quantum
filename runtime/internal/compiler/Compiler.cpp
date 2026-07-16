@@ -576,6 +576,8 @@ cudaq_internal::compiler::Compiler::emitKernelExecutions(
     auto mapping_reorder_idx = compiled.getMetadata().reorderIdx;
     codes.emplace_back(name, codeStr, optionalJit, optionalResourceCounts, j,
                        mapping_reorder_idx);
+    codes.back().hasConditionalsOnMeasureResults =
+        compiled.getMetadata().hasConditionalsOnMeasureResults;
   }
 
   return codes;
